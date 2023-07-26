@@ -11,5 +11,6 @@ COPY web/package.json web/package.json
 COPY docker/.env .
 RUN yarn cache clean
 RUN yarn install --network-timeout 1000000
+RUN yarn upgrade
 COPY . .
 RUN yarn workspaces run build
